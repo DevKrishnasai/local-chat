@@ -14,13 +14,13 @@ function App() {
       return <Navigate to="/login" />;
     }
 
-    return children
+    return children;
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/local-chat">
       <Routes>
-        <Route path="/">
+        <Route path="/local-chat">
           <Route
             index
             element={
