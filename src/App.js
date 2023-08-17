@@ -18,9 +18,9 @@ function App() {
   };
 
   return (
-    <BrowserRouter basename="/local-chat">
+    <BrowserRouter>
       <Routes>
-        <Route path="/local-chat">
+        <Route path="/">
           <Route
             index
             element={
