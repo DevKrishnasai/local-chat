@@ -74,7 +74,7 @@ const Register = () => {
         <p>{loading && "Uploading and compressing the image please wait..."}</p>
         <h3>{err && <span>Something went wrong</span>}</h3>
         <p>
-          You do have an account? <Link to="/login">Login</Link>
+          You do have an account? <Link to="/">Login</Link>
         </p>
       </div>
     </div>
