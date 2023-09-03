@@ -9,11 +9,25 @@ import { useNavigate, Link } from "react-router-dom";
 const Register = () => {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [condition, setCondition] = useState(false);
   const navigate = useNavigate();
 
+  const checkLength = (e) => {
+    if (e.target.value.length > 6) {
+      setCondition(true);
+    } else {
+      setCondition(false);
+    }
+  };
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
+    console.log(e.target[2].value);
+    if (e.target[2].value.length > 6) {
+      setCondition(false);
+    } else {
+      setCondition(true);
+    }
     const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
@@ -43,7 +57,7 @@ const Register = () => {
             });
 
             await setDoc(doc(db, "userChats", res.user.uid), {});
-            navigate("/home");
+            navigate("/");
           } catch (err) {
             setErr(true);
             setLoading(false);
@@ -58,24 +72,49 @@ const Register = () => {
 
   return (
     <div className="formContainer">
+      <div className="intro">
+        <h2>Local Chat</h2>
+        <p>--- Made with love ---</p>
+      </div>
       <div className="formWrapper">
-        <span className="logo">Register</span>
-        <form onSubmit={handleSubmit}>
-          <input required type="text" placeholder="username*" />
-          <input required type="email" placeholder="email*" />
-          <input required type="password" placeholder="password*" />
-          <input style={{ display: "none" }} type="file" id="file" />
-          <label htmlFor="file">
-            <img src={Add} alt="" />
-            <span>Add an avatar</span>
-          </label>
-          <button disabled={loading}>Sign up</button>
-        </form>
-        <p>{loading && "Uploading and compressing the image please wait..."}</p>
-        <h3>{err && <span>Something went wrong</span>}</h3>
-        <p>
-          You do have an account? <Link to="/">Login</Link>
-        </p>
+        <div className="center">
+          <span className="logo">Register</span>
+          <form onSubmit={handleSubmit}>
+            <input required type="text" placeholder="username*" />
+            <input required type="email" placeholder="email*" />
+            <input
+              required
+              type="password"
+              placeholder="password*"
+              onKeyDown={checkLength}
+            />
+            {condition ? (
+              <p
+                style={{
+                  fontSize: "13px",
+                  color: "white",
+                  textAlign: "center",
+                  margin: "0px",
+                }}
+              >
+                password should be atleast 6 charaters
+              </p>
+            ) : null}
+            <input style={{ display: "none" }} type="file" id="file" />
+
+            <label htmlFor="file">
+              <img src={Add} alt="" />
+              <span>Add an avatar</span>
+            </label>
+            <button disabled={loading}>Sign up</button>
+          </form>
+          <p>
+            {loading && "Uploading and compressing the image please wait..."}
+          </p>
+          <p>
+            You do have an account? <Link to="/login">Login</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
