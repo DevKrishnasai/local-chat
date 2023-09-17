@@ -77,44 +77,23 @@ const Register = () => {
         <p>--- Made with love ---</p>
       </div>
       <div className="formWrapper">
-        <div className="center">
-          <span className="logo">Register</span>
-          <form onSubmit={handleSubmit}>
-            <input required type="text" placeholder="username*" />
-            <input required type="email" placeholder="email*" />
-            <input
-              required
-              type="password"
-              placeholder="password*"
-              onKeyDown={checkLength}
-            />
-            {condition ? (
-              <p
-                style={{
-                  fontSize: "13px",
-                  color: "white",
-                  textAlign: "center",
-                  margin: "0px",
-                }}
-              >
-                password should be atleast 6 charaters
-              </p>
-            ) : null}
-            <input style={{ display: "none" }} type="file" id="file" />
-
-            <label htmlFor="file">
-              <img src={Add} alt="" />
-              <span>Add an avatar</span>
-            </label>
-            <button disabled={loading}>Sign up</button>
-          </form>
-          <p>
-            {loading && "Uploading and compressing the image please wait..."}
-          </p>
-          <p>
-            You do have an account? <Link to="/login">Login</Link>
-          </p>
-        </div>
+        <span className="logo">Register</span>
+        <form onSubmit={handleSubmit}>
+          <input required type="text" placeholder="username*" />
+          <input required type="email" placeholder="email*" />
+          <input required type="password" placeholder="password*" />
+          <input style={{ display: "none" }} type="file" id="file" />
+          <label htmlFor="file">
+            <img src={Add} alt="" />
+            <span>Add an avatar</span>
+          </label>
+          <button disabled={loading}>Sign up</button>
+        </form>
+        <p>{loading && "Uploading and compressing the image please wait..."}</p>
+        <h3>{err && <span>Something went wrong</span>}</h3>
+        <p>
+          You do have an account? <Link to="/">Login</Link>
+        </p>
       </div>
     </div>
   );

@@ -26,19 +26,17 @@ const Login = () => {
         <p>--- Made with love ---</p>
       </div>
       <div className="formWrapper">
-        <div className="center">
-          <span className="logo">Login</span>
+        <span className="logo">Login</span>
 
-          <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="email*" />
-            <input type="password" placeholder="password*" />
-            <button>Sign in</button>
-          </form>
-          <h3>{err && <span>Login email or password not correct</span>}</h3>
-          <p>
-            You don't have an account? <Link to="/register">Register</Link>
-          </p>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <input type="email" placeholder="email*" />
+          <input type="password" placeholder="password*" />
+          <button>Sign in</button>
+        </form>
+        <h3>{err && <span>Login email or password not correct</span>}</h3>
+        <p>
+          You don't have an account? <Link to="/register">Register</Link>
+        </p>
       </div>
     </div>
   );

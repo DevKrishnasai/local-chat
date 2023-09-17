@@ -17,138 +17,81 @@
 .formContainer {
   background-color: white;
   height: 100vh;
-  width: 100vw !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  .intro {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("https://images.unsplash.com/photo-1514064019862-23e2a332a6a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1914&q=80");
-    background-size: cover;
-    color: white;
-    height: 100vh;
 
-    h2 {
-      text-align: center;
-      font-size: 4.3em;
-      font-family: "Roboto", "Helvetica Neue";
-    }
-
-    P {
-      font-weight: 500;
-      font-size: 0.8em;
-    }
-  }
   .formWrapper {
-    flex: 1;
-    background-color: whitesmoke;
-    height: 100vh;
-    // background-color: transparent;
+    background-color: rgb(0, 208, 255);
+    background-color: transparent;
 
-    // padding: 20px 60px;
+    padding: 20px 60px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    // gap: 10px;
+    gap: 10px;
     align-items: center;
 
-    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210729/pngtree-abstract-circular-gray-white-gradient-background-image_754036.jpg");
-    background-size: cover;
-    .center {
+    .logo {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .title {
+      color: #5d5b8d;
+      font-size: 12px;
+    }
+
+    h3 {
+      color: rgb(169, 17, 17);
+    }
+
+    form {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #000000 !important;
-      // background-color: red;
-      padding: 30px;
-      border: 3px solid rgb(255, 255, 255);
-      border-radius: 20px;
-      transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
-      filter: blur(2px);
-      opacity: 0.5;
-      transition: 0.6s ease all;
+      gap: 15px;
 
-      &:hover {
-        transform: perspective(800px) rotateY(-15deg) translateY(-50px)
-          rotateX(10deg) scale(1);
-        filter: blur(0);
-        opacity: 1;
-        border: 2px solid rgb(0, 0, 0);
+      input {
+        padding: 15px;
+        border: none;
+        width: 250px;
+        border-bottom: 1px solid #a7bcff;
+        &::placeholder {
+          color: rgb(0, 0, 0);
+        }
       }
 
-      gap: 10px;
-      .logo {
-        // color: #ffffff;
+      button {
+        background-color: #7b96ec;
+        color: white;
+        padding: 10px;
         font-weight: bold;
-        font-size: 24px;
+        border: none;
+        cursor: pointer;
       }
 
-      .title {
-        // color: #5d5b8d;
-        font-size: 12px;
-      }
-
-      h3 {
-        // color: rgb(169, 17, 17);
-      }
-
-      form {
+      label {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: 15px;
-        // background-color: #b60000;
+        gap: 10px;
+        color: #8da4f1;
+        font-size: 12px;
+        cursor: pointer;
 
-        input {
-          padding: 15px;
-          border: none;
-          width: 250px;
-          border-bottom: 1px solid #a7bcff;
-          &::placeholder {
-            color: rgb(0, 0, 0);
-          }
-        }
-
-        button {
-          background-color: #7b96ec;
-          color: white;
-          padding: 10px;
-          font-weight: bold;
-          border: none;
-          cursor: pointer;
-          border-radius: 20px;
-          margin-top: 10px;
-        }
-
-        label {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          // color: #8da4f1;
-          font-size: 12px;
-          cursor: pointer;
-
-          img {
-            width: 32px;
-          }
+        img {
+          width: 32px;
         }
       }
-      p {
-        // color: #ffffff;
-        font-size: 12px;
-        // margin-top: 10px;
-        a {
-          // color: white;
-          text-decoration: none;
-          &:hover {
-            color: #b60000;
-          }
+    }
+    p {
+      color: #ffffff;
+      font-size: 12px;
+      margin-top: 10px;
+      a {
+        color: white;
+        &:hover {
+          color: #b60000;
         }
       }
     }
@@ -314,6 +257,7 @@
     }
     .chat {
       flex: 3;
+      height: 100vh;
       scroll-behavior: smooth;
       // @include mobile() {
       //   // flex: 7;
