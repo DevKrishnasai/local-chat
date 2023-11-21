@@ -25,7 +25,7 @@ Follow these steps to get the project up and running on your local machine:
 Clone the repository:
 
 ```bash
-git clone [https://github.com/your-username/local-chat.git](https://github.com/DevKrishnasai/local-chat.git)https://github.com/DevKrishnasai/local-chat.git
+git clone https://github.com/DevKrishnasai/local-chat.git
 cd local-chat
 npm install
 npm start
